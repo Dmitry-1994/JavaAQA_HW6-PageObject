@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class PageVer {
     private final SelenideElement code = $("[data-test-id='code'] input");
     private final SelenideElement button = $("[data-test-id = action-verify] .button__content");
+
     public PageVer() {
         code.shouldBe(Condition.visible);
     }

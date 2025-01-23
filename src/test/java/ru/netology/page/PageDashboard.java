@@ -33,6 +33,5 @@ public class PageDashboard {
     public PageTransit selectTransitCard(DataGenerator.InfoCard infoCard) {
         cards.findBy(Condition.attribute("data-test-id", infoCard.getId())).$(action).click();
         return new PageTransit();
-
     }
 }
