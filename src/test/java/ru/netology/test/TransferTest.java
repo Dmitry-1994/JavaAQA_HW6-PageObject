@@ -13,6 +13,7 @@ import ru.netology.page.PageVer;
 
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.getAutInfo;
 import static ru.netology.data.DataGenerator.getVerCode;
@@ -79,6 +80,7 @@ public class TransferTest {
         assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
+
     @Test
     void negativeTransitMoneyMoreBalance() {
 
@@ -159,9 +161,12 @@ public class TransferTest {
 
         pageDashboard.selectTransitCard(infoSecondCard);
 
-        var actual = pageTransit.shouldBeEmptyForm();
+        String[] actual = pageTransit.shouldBeEmptyForm();
+        String actualAmount = actual[0];
+        String actualFrom = actual[1];
         var expected = "";
-        assertEquals(expected, actual);
+        assertEquals(expected, actualAmount);
+        assertEquals(expected, actualFrom);
     }
 
 }

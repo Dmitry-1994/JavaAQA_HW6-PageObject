@@ -39,8 +39,12 @@ public class PageTransit {
         return new PageDashboard();
     }
 
-    public String shouldBeEmptyForm() {
-        String text = amount.getValue();
+    public String[] shouldBeEmptyForm() {
+        String textAmount = amount.getValue();
+        String textFrom = from.getValue();
+        String[] text= new String[2];
+        text[0] = textAmount;
+        text[1] = textFrom;
         return text;
     }
 
