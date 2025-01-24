@@ -5,7 +5,8 @@ import lombok.Value;
 import java.util.Random;
 
 public class DataGenerator {
-    private DataGenerator() {}
+    private DataGenerator() {
+    }
 
     public static AutInfo getAutInfo() {
         return new AutInfo("vasya", "qwerty123");

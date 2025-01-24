@@ -1,8 +1,5 @@
 package ru.netology.test;
 
-
-import com.codeborne.selenide.Configuration;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataGenerator;
@@ -13,7 +10,6 @@ import ru.netology.page.PageVer;
 
 
 import static com.codeborne.selenide.Selenide.open;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.getAutInfo;
 import static ru.netology.data.DataGenerator.getVerCode;
@@ -24,8 +20,6 @@ public class TransferTest {
     @BeforeEach
     void setUp() {
         open("http://localhost:9999");
-
-        Configuration.holdBrowserOpen = true;
 
         var autInfo = getAutInfo();
 

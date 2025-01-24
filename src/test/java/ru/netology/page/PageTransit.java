@@ -12,9 +12,10 @@ public class PageTransit {
     private final SelenideElement headText = $(byText("Пополнение карты"));
     private final SelenideElement amount = $("[data-test-id=amount] input");
     private final SelenideElement from = $("[data-test-id=from] input");
-    private final SelenideElement execute= $("[data-test-id=action-transfer] .button__content");
-    private final SelenideElement cancel= $("[data-test-id=action-cancel] .button__content");
+    private final SelenideElement execute = $("[data-test-id=action-transfer] .button__content");
+    private final SelenideElement cancel = $("[data-test-id=action-cancel] .button__content");
     private final SelenideElement massageError = $(byText("Ошибка!"));
+
     public PageTransit() {
         headText.shouldBe(Condition.visible);
     }
@@ -23,6 +24,7 @@ public class PageTransit {
         amount.setValue(amountMoneyTransit);
         from.setValue(infoCard.getNumber());
     }
+
     public void moneyTransit(DataGenerator.InfoCard infoCard, String amountMoneyTransit) {
         fillingTransitForm(infoCard, amountMoneyTransit);
         execute.click();
@@ -42,7 +44,7 @@ public class PageTransit {
     public String[] shouldBeEmptyForm() {
         String textAmount = amount.getValue().replaceAll(" ", "");
         String textFrom = from.getValue();
-        String[] text= new String[2];
+        String[] text = new String[2];
         text[0] = textAmount;
         text[1] = textFrom;
         return text;

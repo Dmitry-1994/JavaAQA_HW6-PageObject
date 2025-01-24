@@ -14,6 +14,7 @@ public class PageDashboard {
     private final String action = "[data-test-id=action-deposit]";
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
+
     public PageDashboard() {
         header.shouldBe(Condition.visible).shouldHave(Condition.text("Личный кабинет"));
     }
