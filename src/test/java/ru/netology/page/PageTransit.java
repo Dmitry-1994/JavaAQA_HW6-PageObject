@@ -40,7 +40,7 @@ public class PageTransit {
     }
 
     public String[] shouldBeEmptyForm() {
-        String textAmount = amount.getValue();
+        String textAmount = amount.getValue().replaceAll(" ", "");
         String textFrom = from.getValue();
         String[] text= new String[2];
         text[0] = textAmount;
